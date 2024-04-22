@@ -2,7 +2,7 @@ import React from 'react'
 
 function CustomerOnboarding() {
   return (
-    <div className='siteBg custOnboarding'>Customer Onboarding</div>
+    <div className='siteBg custOnboarding p-5'>Customer Onboarding</div>
   )
 }
 

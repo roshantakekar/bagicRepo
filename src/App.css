@@ -70,6 +70,8 @@ body{
 }
 
 
+
+
 /* Target devices with a minimum width of 576px and a maximum width of 767px */
 @media only screen and (max-width: 767px) {
   .nav-link{
