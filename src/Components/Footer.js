@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 
 function Footer() {
     return (
-        <Container fluid className='p-5 footer-bg text-start'>
+        <Container fluid className='p-5 footer-bg text-start mt-3'>
             
             <p>Bajaj Allianz General Insurance Company</p>
             <div className="footerTextSmall">
