@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'AllianzSans'; /* Name you'll use in your styles */
+  src: url('./fonts/Allianz-Sans.woff2') format('woff2');
+  font-weight: normal; /* Or any desired weight */
+}
+
+body{
+  font-family: 'AllianzSans';
+}
+
 .App {
   text-align: center;
 }
@@ -34,5 +44,38 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.header-bg,.footer-bg,.siteBg{
+  background-color: #0071BB;
+  color: #ffffff;
+}
+
+.footerTextSmall p{
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.footerTextSmall a{
+  color: #ffffff;
+}
+
+.nav-link{
+  color: white;
+}
+
+.custOnboarding{
+  height: 50vh;
+}
+
+
+/* Target devices with a minimum width of 576px and a maximum width of 767px */
+@media only screen and (max-width: 767px) {
+  .nav-link{
+    color: #000000;
+  }
+  .custOnboarding{
+    height: 20vh;
   }
 }
