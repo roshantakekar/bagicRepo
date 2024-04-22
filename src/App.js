@@ -2,15 +2,23 @@
 import Header from './Components/Header'
 import Footer from './Components/Footer'
 import KycMain from './Components/KycMain'
+import SuccessOrder from './Components/SuccessOrder';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <KycMain/>
-      <Footer/>
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route index element={<KycMain/>}/>
+          <Route path="success" element={<SuccessOrder/>}/>
+        </Routes>
+
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
