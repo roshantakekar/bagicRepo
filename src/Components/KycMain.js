@@ -13,19 +13,19 @@ function KycMain() {
 
 
     return (
-        <Container>
+        <Container fluid >
             <Row className='mb-3 '>
-                <Col sm={4}>
+                <Col sm={4} className='mb-2'>
                     <CustomerOnboarding />
                 </Col>
-                <Col sm={8}>
+                <Col sm={8} className='tabContentCustom'>
                     <Tabs
                         defaultActiveKey="individual"
                         id="uncontrolled-tab-example"
-                        className="mb-3 w-100"
+                        className="mb-3 w-100 navTabsCustom"
                         
                     >
-                        <Tab eventKey="individual" title="Individual/Proprietor" >
+                        <Tab eventKey="individual" title="Individual/Proprietor">
                             <IndividualForm/>
                         </Tab>
                         <Tab eventKey="corporate" title="Corporate">

@@ -1,11 +1,18 @@
 @font-face {
-  font-family: 'AllianzSans'; /* Name you'll use in your styles */
+  font-family: 'AllianzSans';
+  /* Name you'll use in your styles */
   src: url('./fonts/Allianz-Sans.woff2') format('woff2');
-  font-weight: normal; /* Or any desired weight */
+  font-weight: normal;
+  /* Or any desired weight */
 }
 
-body{
+html {
+  font-size: 62.5%;
+}
+
+body {
   font-family: 'AllianzSans';
+  font-size: 1.8rem;
 }
 
 .App {
@@ -42,49 +49,142 @@ body{
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
-.header-bg,.footer-bg,.siteBg{
+.header-bg,
+.footer-bg,
+.siteBg {
   background-color: #0071BB;
   color: #ffffff;
 }
 
-.footerTextSmall p{
-  font-size: 0.8rem;
+.footerTextSmall p {
+  font-size: 1.4rem;
   margin-bottom: 0.5rem;
 }
 
-.footerTextSmall a{
+.footerTextSmall a {
   color: #ffffff;
 }
 
-.nav-link{
+.nav-link {
   color: white;
 }
 
-.custOnboarding{
+.custOnboarding {
   height: 50vh;
 }
 
-.mb-30{
+.mb-30 {
   margin-bottom: 30rem;
 }
 
-.bagicText{
+.bagicText {
   color: #0072BC;
 }
 
+.btn {
+  background: #f89c30;
+  border-radius: 50px;
+  color: white;
+  letter-spacing: 1px;
+  border: 1px solid #f89c30;
+  padding: 8px 30px 10px;
+  font-size: 1.8rem;
+}
+
+.btn:hover {
+  background: #f89c30;
+  border: 1px solid #f89c30;
+}
+
+.labelStyle {
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: #333333;
+  font-weight: bold;
+}
+
+.fieldBox {
+  border: none;
+  border-bottom: 1px solid #c5c5c5;
+  padding: 7px 10px;
+  border-radius: 0px;
+  box-sizing: border-box;
+  color: #fc8f3d;
+  line-height: 20px;
+  outline: none;
+  font-size: 1.6rem;
+}
+
+.fieldBox:focus {
+  box-shadow: none;
+  color: #fc8f3d;
+}
+
+.errorMsg {
+  color: #f00;
+  font-size: 1.2rem;
+  padding: 5px 0 15px;
+}
+
+.radioStyle {
+  border: 1px solid #ccc;
+  padding: 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.radioStyle input {
+  width: 1.8rem;
+  height: 1.8rem;
+  position: relative;
+  top: 3px;
+}
+
+.react-datepicker-wrapper-custom{
+  display: block;
+}
+
+.navTabsCustom .nav-item{
+  width: 50%;
+}
+
+.navTabsCustom button{
+  padding: 20px;
+  width: 100%;
+}
 
 
+.tabContentCustom .tab-content{
+  padding: 20px 10px 40px 10px  ;
+}
+
+.navTabsCustom .nav-link{
+  color: #000000;
+}
+
+
+.navTabsCustom .nav-link.active{
+  color: #005596;
+  font-weight: bold;
+}
+
+
+.dob-dp .react-datepicker-wrapper{
+  width: 100%;
+}
 /* Target devices with a minimum width of 576px and a maximum width of 767px */
 @media only screen and (max-width: 767px) {
-  .nav-link{
+  .nav-link {
     color: #000000;
   }
-  .custOnboarding{
+
+  .custOnboarding {
     height: 20vh;
   }
 }
