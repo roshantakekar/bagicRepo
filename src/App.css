@@ -76,7 +76,7 @@ body {
 }
 
 .custOnboarding {
-  height: 50vh;
+  height: 90vh;
 }
 
 .mb-30 {
@@ -139,6 +139,15 @@ body {
   cursor: pointer;
 }
 
+.radioStyle:hover{
+  border: 1px solid #f89c30;
+}
+
+.radioStyle:hover {
+  border-color: 1s ease-in-out #f89c30; /* Animate color change to orange */
+  transition: border-color 0.3s ease-in-out; /* Define animation properties */
+}
+
 .radioStyle input {
   width: 1.8rem;
   height: 1.8rem;
@@ -178,6 +187,11 @@ body {
 .dob-dp .react-datepicker-wrapper{
   width: 100%;
 }
+.vcenter{
+  position: relative;
+  top:50%;
+  transform: translateY(-50%);
+}
 /* Target devices with a minimum width of 576px and a maximum width of 767px */
 @media only screen and (max-width: 767px) {
   .nav-link {
@@ -185,6 +199,10 @@ body {
   }
 
   .custOnboarding {
-    height: 20vh;
+    height: 30vh;
+  }
+
+  .navTabsCustom .nav-link{
+    font-size: 1.4rem;  
   }
 }
