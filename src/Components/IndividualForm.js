@@ -11,16 +11,18 @@ import Loader from './Loader';
 const initialValues = {
     /* name: '',
     email: '', */
-    idType: 'OTHER', // radio button selection
+    kyc_form_Type: 'Individual',
+    idType: 'PAN', // radio button selection
     documentType: '',
     dl_number: '',
     vid_number: '',
     passport_number: '',
+    CKYC_number: '',
     dob: '',
     aadhaar_number: '',
-    pan_number: '',
     aadhaar_name: '',
     gender: '',
+    pan_number: '',
     consent: false
 };
 
@@ -49,9 +51,29 @@ const validationSchema = Yup.object().shape({
         then: (schema) => schema.required('Passport No. is required'),
         otherwise: (schema) => schema.notRequired()
     }),
+    CKYC_number: Yup.string().when('documentType', {
+        is: 'CKYC',
+        then: (schema) => schema.required('CKYC No. is required'),
+        otherwise: (schema) => schema.notRequired()
+    }),
     pan_number: Yup.string().when('idType', {
         is: 'PAN',
         then: (schema) => schema.required('Pan Number is required'),
+        otherwise: (schema) => schema.notRequired()
+    }),
+    aadhaar_name: Yup.string().when('idType', {
+        is: 'AADHAAR',
+        then: (schema) => schema.required('Aadhaar Name is Required'),
+        otherwise: (schema) => schema.notRequired()
+    }),
+    aadhaar_number: Yup.string().when('idType', {
+        is: 'AADHAAR',
+        then: (schema) => schema.required('Aadhaar Number is Required'),
+        otherwise: (schema) => schema.notRequired()
+    }),
+    gender: Yup.string().when('idType', {
+        is: 'AADHAAR',
+        then: (schema) => schema.required('Gender is Required'),
         otherwise: (schema) => schema.notRequired()
     }),
     dob: Yup.date().required('Date of Birth is required'),
@@ -150,6 +172,7 @@ function IndividualForm() {
                                         <option value="DRIVING_LICENCE">Driving Licence</option>
                                         <option value="VOTER_ID">Voter ID</option>
                                         <option value="PASSPORT">Passport</option>
+                                        <option value="CKYC">CKYC</option>
                                     </Field>
                                     {errors.documentType && touched.documentType && <ErrorMessage name="documentType" component="div" className="text-danger errorMsg" />}
                                 </FormGroup>
@@ -176,6 +199,14 @@ function IndividualForm() {
                                         <FormLabel className='labelStyle'>Passport Number:</FormLabel>
                                         <Field placeholder="Passport Number" type="text" name="passport_number" id="passport_number" className="form-control fieldBox" />
                                         {errors.passport_number && touched.passport_number && <ErrorMessage name="passport_number" component="div" className="text-danger errorMsg" />}
+                                    </FormGroup>)}
+
+
+                                {values.documentType === 'CKYC' && (
+                                    <FormGroup as={Col} md={12} controlId="formBasicCKYCNumber" className='text-start mb-4'>
+                                        <FormLabel className='labelStyle'>CKYC Number:</FormLabel>
+                                        <Field placeholder="CKYC Number" type="text" name="CKYC_number" id="CKYC_number" className="form-control fieldBox" />
+                                        {errors.CKYC_number && touched.CKYC_number && <ErrorMessage name="CKYC_number" component="div" className="text-danger errorMsg" />}
                                     </FormGroup>)}
                             </>
                             )}
@@ -228,9 +259,9 @@ function IndividualForm() {
                                             </FormLabel>
                                         </Col>
                                     </Row>
-                                    {errors.idType && touched.idType && <ErrorMessage name="idType" component="div" className="text-danger errorMsg" />}
+                                    {errors.gender && touched.gender && <ErrorMessage name="gender" component="div" className="text-danger errorMsg" />}
                                 </FormGroup>
-                            </>)} 
+                            </>)}
 
 
 
@@ -288,10 +319,14 @@ function IndividualForm() {
 
 
 
+                            <FormGroup as={Col} md={12} controlId="formBasicSubmit" className="text-center mb-4">
+                                <Button type="submit" className="btn btn-sm">
+                                    {isSubmitting ? 'Submitting...' : 'Submit'}
+                                </Button>
+                            </FormGroup>
 
-                            <Button type="submit" className="btn " disabled={isSubmitting}>
-                                {isSubmitting ? 'Submitting...' : 'Submit'}
-                            </Button>
+
+                           
                         </Row>
                     </Form>
                     )}
