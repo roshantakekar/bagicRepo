@@ -281,14 +281,15 @@ function IndividualForm() {
 
 
 
-                            <FormGroup as={Col} md={12} controlId="formBasicDOB" className="text-start mb-4 dob-dp">
-                                <FormLabel className='labelStyle d-block'>Date of Birth</FormLabel>
-                                <Field name="dob" className="w-100">
+                            <FormGroup as={Col} md={6} controlId="formBasicDOB" className="text-start mb-4 dob-dp">
+                                <FormLabel className='labelStyle '>Date of Birth</FormLabel>
+                                <Field name="dob" className="w-100" >
                                     {({ field, form }) => (
                                         <DatePicker
                                             {...field}
                                             selected={field.value}
                                             onChange={(date) => form.setFieldValue(field.name, date)}
+                                            placeholderText="Date of Birth"
                                             dateFormat="dd-MM-yyyy"
                                             className=' fieldBox w-100'
                                         />
@@ -326,7 +327,7 @@ function IndividualForm() {
                             </FormGroup>
 
 
-                           
+
                         </Row>
                     </Form>
                     )}

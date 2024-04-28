@@ -10,7 +10,7 @@ function CustomerOnboarding() {
           className="d-inline-block align-top mb-2"
           alt="bajiclogo"
         />
-        <div>
+        <div className='mt-5 text-uppercase fw-bold'>
           Customer Onboarding
         </div>
         </div>
