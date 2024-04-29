@@ -23,7 +23,8 @@ const initialValues = {
     aadhaar_name: '',
     gender: '',
     pan_number: '',
-    consent: false
+    consent: false,
+    consent2:false
 };
 
 
@@ -78,6 +79,7 @@ const validationSchema = Yup.object().shape({
     }),
     dob: Yup.date().required('Date of Birth is required'),
     consent: Yup.boolean().oneOf([true], 'You must consent to submit the form'),
+    consent2: Yup.boolean().oneOf([true], 'You must consent to submit the form'),
 });
 
 function IndividualForm() {
@@ -303,17 +305,24 @@ function IndividualForm() {
 
 
 
-                            <FormGroup as={Col} md={12} controlId="formBasicConsent" className="text-start mb-4">
+                            <FormGroup as={Col} md={12} controlId="formBasicConsent" className="text-start mb-4 mt-5">
                                 <FormCheck inline style={{ display: 'inline-block' }}>
                                     <Field type="checkbox" name="consent" id="consentCheckbox" style={{ marginRight: '5px' }} />
                                     <label className="form-check-label" htmlFor="consentCheckbox" style={{ display: 'inline' }}>
-                                        I hereby give my consent to the Company to verify
-                                        my identity through Central KYC Registry or UIDAI or
-                                        through any other modes for the purpose of
-                                        undertaking KYC
+                                    I hearby confirm that the customer name is as per the KYC document/document number submitted by the customer. In case the above information is found to be false or untrue or misleading or misrepresenting, I am aware that I may be held liable for the same.
                                     </label>
                                 </FormCheck>
                                 {errors.consent && touched.consent && <ErrorMessage name="consent" component="div" className="text-danger errorMsg" />}
+                            </FormGroup>
+
+                            <FormGroup as={Col} md={12} controlId="formBasicConsent2" className="text-start mb-4">
+                                <FormCheck inline style={{ display: 'inline-block' }}>
+                                    <Field type="checkbox" name="consent2" id="consentCheckbox2" style={{ marginRight: '5px' }} />
+                                    <label className="form-check-label" htmlFor="consentCheckbox2" style={{ display: 'inline' }}>
+                                    I hearby confirm that the customer name is as per the KYC document/document number submitted by the customer. In case the above information is found to be false or untrue or misleading or misrepresenting, I am aware that I may be held liable for the same.
+                                    </label>
+                                </FormCheck>
+                                {errors.consent2 && touched.consent2 && <ErrorMessage name="consent2" component="div" className="text-danger errorMsg" />}
                             </FormGroup>
 
 
