@@ -6,12 +6,11 @@ import CustomerOnboarding from './CustomerOnboarding';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import IndividualForm from './IndividualForm';
+import CorporateForm from './CorporateForm';
 
 
 function KycMain() {
     
-
-
     return (
         <Container fluid >
             <Row className='mb-3 '>
@@ -29,7 +28,7 @@ function KycMain() {
                             <IndividualForm/>
                         </Tab>
                         <Tab eventKey="corporate" title="Corporate">
-                            Corporate Form Here
+                            <CorporateForm/>
                         </Tab>
                     </Tabs>
 
