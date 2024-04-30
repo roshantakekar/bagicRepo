@@ -12,8 +12,11 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
+          <Route path="/bagicRepo">
           <Route index element={<KycMain/>}/>
           <Route path="success" element={<SuccessOrder/>}/>
+          </Route>
+
         </Routes>
 
         <Footer />
