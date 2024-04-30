@@ -14,7 +14,7 @@ const initialValues = {
     ckyc_number: '',
     pan_number: '',
     doi: '',
-    dob: '',
+    // dob: '',
     gstin_number: '',
     /* email: '',
     addressLineOne: '',
@@ -70,16 +70,17 @@ const validationSchema = Yup.object().shape({
         then: (schema) => schema.required('Country is required'),
         otherwise: (schema) => schema.notRequired()
     }), */
-    doi: Yup.string().when('idTypeCorp', {
-        is: 'GSTIN',
-        then: (schema) => schema.required('Date of Incorporation is required'),
-        otherwise: (schema) => schema.notRequired()
-    }),
-    dob: Yup.string().when('idTypeCorp', {
-        is: (value) => ['PAN', 'CKYC'].includes(value),  // Check for both PAN and CKYC
-        then: (schema) => schema.required('Date of Birth is required'),
-        otherwise: (schema) => schema.notRequired()
-    }),
+    // doi: Yup.string().when('idTypeCorp', {
+    //     is: 'GSTIN',
+    //     then: (schema) => schema.required('Date of Incorporation is required'),
+    //     otherwise: (schema) => schema.notRequired()
+    // }),
+    // dob: Yup.string().when('idTypeCorp', {
+    //     is: (value) => ['PAN', 'CKYC'].includes(value),  // Check for both PAN and CKYC
+    //     then: (schema) => schema.required('Date of Birth is required'),
+    //     otherwise: (schema) => schema.notRequired()
+    // }),
+    doi: Yup.date().required('Date of Incorporation is required'),
     consent: Yup.boolean().oneOf([true], 'You must consent to submit the form'),
     consent2: Yup.boolean().oneOf([true], 'You must consent to submit the form')
 });
@@ -188,22 +189,6 @@ function CorporateForm() {
                                     {errors.gstin_number && touched.gstin_number && <ErrorMessage name="gstin_number" component="div" className="text-danger errorMsg" />}
                                 </FormGroup>
 
-                                <FormGroup as={Col} md={6} controlId="formBasicDOI" className="text-start mb-4 dob-dp">
-                                    <FormLabel className='labelStyle '>Date of Incorporation</FormLabel>
-                                    <Field name="doi" className="w-100" >
-                                        {({ field, form }) => (
-                                            <DatePicker
-                                                {...field}
-                                                selected={field.value}
-                                                onChange={(date) => form.setFieldValue(field.name, date)}
-                                                placeholderText="Date of Incorporation"
-                                                dateFormat="dd-MM-yyyy"
-                                                className=' fieldBox w-100'
-                                            />
-                                        )}
-                                    </Field>
-                                    {errors.doi && touched.doi && <ErrorMessage name="doi" component="div" className="text-danger errorMsg" />}
-                                </FormGroup>
                             </>)}
 
                             {values.idTypeCorp === 'CKYC' && (
@@ -254,7 +239,7 @@ function CorporateForm() {
                             )}
 
 
-                            {(values.idTypeCorp === 'PAN' || values.idTypeCorp === 'CKYC') && (<>
+                            {/* {(values.idTypeCorp === 'PAN' || values.idTypeCorp === 'CKYC') && (<>
                                 <FormGroup as={Col} md={6} controlId="formBasicDOB" className="text-start mb-4 dob-dp">
                                     <FormLabel className='labelStyle '>Date of Birth</FormLabel>
                                     <Field name="dob" className="w-100" >
@@ -271,7 +256,24 @@ function CorporateForm() {
                                     </Field>
                                     {errors.dob && touched.dob && <ErrorMessage name="dob" component="div" className="text-danger errorMsg" />}
                                 </FormGroup>
-                            </>)}
+                            </>)} */}
+
+                            <FormGroup as={Col} md={6} controlId="formBasicDOI" className="text-start mb-4 dob-dp">
+                                <FormLabel className='labelStyle '>Date of Incorporation</FormLabel>
+                                <Field name="doi" className="w-100" >
+                                    {({ field, form }) => (
+                                        <DatePicker
+                                            {...field}
+                                            selected={field.value}
+                                            onChange={(date) => form.setFieldValue(field.name, date)}
+                                            placeholderText="Date of Incorporation"
+                                            dateFormat="dd-MM-yyyy"
+                                            className=' fieldBox w-100'
+                                        />
+                                    )}
+                                </Field>
+                                {errors.doi && touched.doi && <ErrorMessage name="doi" component="div" className="text-danger errorMsg" />}
+                            </FormGroup>
 
 
 
@@ -280,7 +282,7 @@ function CorporateForm() {
                                 <FormCheck inline style={{ display: 'inline-block' }}>
                                     <Field type="checkbox" name="consent" id="consentCheckboxCorp" style={{ marginRight: '5px' }} />
                                     <label className="form-check-label checkBoxLabel" htmlFor="consentCheckboxCorp" style={{ display: 'inline' }}>
-                                    I hearby confirm that the customer name is as per the KYC document/document number submitted by the customer. In case the above information is found to be false or untrue or misleading or misrepresenting, I am aware that I may be held liable for the same.
+                                        I hearby confirm that the customer name is as per the KYC document/document number submitted by the customer. In case the above information is found to be false or untrue or misleading or misrepresenting, I am aware that I may be held liable for the same.
                                     </label>
                                 </FormCheck>
                                 {errors.consent && touched.consent && <ErrorMessage name="consent" component="div" className="text-danger errorMsg" />}
@@ -291,7 +293,7 @@ function CorporateForm() {
                                 <FormCheck inline style={{ display: 'inline-block' }}>
                                     <Field type="checkbox" name="consent2" id="consentCheckboxCorp2" style={{ marginRight: '5px' }} />
                                     <label className="form-check-label checkBoxLabel" htmlFor="consentCheckboxCorp2" style={{ display: 'inline' }}>
-                                    I hearby declare that the details furnished above are true to the best of my/our knowledge and belief and I undertake to inform the Company of any changes therein immediately. In case any of the above information is found to be false or untrue or misleading or misrepresenting I am/we are aware that I/we may be held liable for it.
+                                        I hearby declare that the details furnished above are true to the best of my/our knowledge and belief and I undertake to inform the Company of any changes therein immediately. In case any of the above information is found to be false or untrue or misleading or misrepresenting I am/we are aware that I/we may be held liable for it.
                                     </label>
                                 </FormCheck>
                                 {errors.consent2 && touched.consent2 && <ErrorMessage name="consent2" component="div" className="text-danger errorMsg" />}
