@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/bagicRepo/static/css/main.7ca0698f.css",
-    "main.js": "/bagicRepo/static/js/main.28e0faf2.js",
+    "main.css": "/bagicRepo/static/css/main.f0821d3c.css",
+    "main.js": "/bagicRepo/static/js/main.cf459155.js",
     "static/js/453.3e3a1f3b.chunk.js": "/bagicRepo/static/js/453.3e3a1f3b.chunk.js",
     "static/media/Allianz-Sans.woff2": "/bagicRepo/static/media/Allianz-Sans.c3eb4a5cc5b3f5ba2ebf.woff2",
     "static/media/DatepickerIcon.svg": "/bagicRepo/static/media/DatepickerIcon.b09115c069e3527a4c21.svg",
     "index.html": "/bagicRepo/index.html",
-    "main.7ca0698f.css.map": "/bagicRepo/static/css/main.7ca0698f.css.map",
-    "main.28e0faf2.js.map": "/bagicRepo/static/js/main.28e0faf2.js.map",
+    "main.f0821d3c.css.map": "/bagicRepo/static/css/main.f0821d3c.css.map",
+    "main.cf459155.js.map": "/bagicRepo/static/js/main.cf459155.js.map",
     "453.3e3a1f3b.chunk.js.map": "/bagicRepo/static/js/453.3e3a1f3b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ca0698f.css",
-    "static/js/main.28e0faf2.js"
+    "static/css/main.f0821d3c.css",
+    "static/js/main.cf459155.js"
   ]
 }
