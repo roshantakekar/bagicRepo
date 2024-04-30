@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/bagicRepo/static/css/main.7ca0698f.css",
-    "main.js": "/bagicRepo/static/js/main.735ee9d8.js",
-    "static/js/453.3e3a1f3b.chunk.js": "/bagicRepo/static/js/453.3e3a1f3b.chunk.js",
-    "static/media/Allianz-Sans.woff2": "/bagicRepo/static/media/Allianz-Sans.c3eb4a5cc5b3f5ba2ebf.woff2",
-    "static/media/DatepickerIcon.svg": "/bagicRepo/static/media/DatepickerIcon.b09115c069e3527a4c21.svg",
-    "index.html": "/bagicRepo/index.html",
-    "main.7ca0698f.css.map": "/bagicRepo/static/css/main.7ca0698f.css.map",
-    "main.735ee9d8.js.map": "/bagicRepo/static/js/main.735ee9d8.js.map",
-    "453.3e3a1f3b.chunk.js.map": "/bagicRepo/static/js/453.3e3a1f3b.chunk.js.map"
+    "main.css": "/static/css/main.74f2371a.css",
+    "main.js": "/static/js/main.564973fa.js",
+    "static/js/453.3e3a1f3b.chunk.js": "/static/js/453.3e3a1f3b.chunk.js",
+    "static/media/Allianz-Sans.woff2": "/static/media/Allianz-Sans.c3eb4a5cc5b3f5ba2ebf.woff2",
+    "static/media/DatepickerIcon.svg": "/static/media/DatepickerIcon.b09115c069e3527a4c21.svg",
+    "index.html": "/index.html",
+    "main.74f2371a.css.map": "/static/css/main.74f2371a.css.map",
+    "main.564973fa.js.map": "/static/js/main.564973fa.js.map",
+    "453.3e3a1f3b.chunk.js.map": "/static/js/453.3e3a1f3b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ca0698f.css",
-    "static/js/main.735ee9d8.js"
+    "static/css/main.74f2371a.css",
+    "static/js/main.564973fa.js"
   ]
 }
