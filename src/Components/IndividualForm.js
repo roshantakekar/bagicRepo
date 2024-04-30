@@ -308,7 +308,7 @@ function IndividualForm() {
                             <FormGroup as={Col} md={12} controlId="formBasicConsent" className="text-start mb-4 mt-5">
                                 <FormCheck inline style={{ display: 'inline-block' }}>
                                     <Field type="checkbox" name="consent" id="consentCheckbox" style={{ marginRight: '5px' }} />
-                                    <label className="form-check-label" htmlFor="consentCheckbox" style={{ display: 'inline' }}>
+                                    <label className="form-check-label checkBoxLabel" htmlFor="consentCheckbox" style={{ display: 'inline' }}>
                                     I hearby confirm that the customer name is as per the KYC document/document number submitted by the customer. In case the above information is found to be false or untrue or misleading or misrepresenting, I am aware that I may be held liable for the same.
                                     </label>
                                 </FormCheck>
