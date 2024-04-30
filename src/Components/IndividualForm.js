@@ -105,7 +105,7 @@ function IndividualForm() {
             })
             if (result === "success") {
                 console.log("Data", values)
-                navigate('/success')
+                navigate('/bagicRepo/success')
 
             }
             resetForm()
