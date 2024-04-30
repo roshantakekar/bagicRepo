@@ -279,7 +279,7 @@ function CorporateForm() {
                             <FormGroup as={Col} md={12} controlId="formBasicConsent" className="text-start mb-4 mt-5">
                                 <FormCheck inline style={{ display: 'inline-block' }}>
                                     <Field type="checkbox" name="consent" id="consentCheckboxCorp" style={{ marginRight: '5px' }} />
-                                    <label className="form-check-label" htmlFor="consentCheckboxCorp" style={{ display: 'inline' }}>
+                                    <label className="form-check-label checkBoxLabel" htmlFor="consentCheckboxCorp" style={{ display: 'inline' }}>
                                     I hearby confirm that the customer name is as per the KYC document/document number submitted by the customer. In case the above information is found to be false or untrue or misleading or misrepresenting, I am aware that I may be held liable for the same.
                                     </label>
                                 </FormCheck>
@@ -290,7 +290,7 @@ function CorporateForm() {
                             <FormGroup as={Col} md={12} controlId="formBasicConsent2" className="text-start mb-4">
                                 <FormCheck inline style={{ display: 'inline-block' }}>
                                     <Field type="checkbox" name="consent2" id="consentCheckboxCorp2" style={{ marginRight: '5px' }} />
-                                    <label className="form-check-label" htmlFor="consentCheckboxCorp2" style={{ display: 'inline' }}>
+                                    <label className="form-check-label checkBoxLabel" htmlFor="consentCheckboxCorp2" style={{ display: 'inline' }}>
                                     I hearby declare that the details furnished above are true to the best of my/our knowledge and belief and I undertake to inform the Company of any changes therein immediately. In case any of the above information is found to be false or untrue or misleading or misrepresenting I am/we are aware that I/we may be held liable for it.
                                     </label>
                                 </FormCheck>
